@@ -62,8 +62,18 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) { // Work Here
-    return [];
+    return arr.map((item) => {
+        return {
+            nombre: item.name,
+            tipo: item.type
+        };
+    });
 }
+
+// Change Name -> Nombre, and Type-> Tipo.
+// If it's same length, use map
+// Whenever we look at the array, we return what we want the array to look like
+// 
 
 /*
 Output:
