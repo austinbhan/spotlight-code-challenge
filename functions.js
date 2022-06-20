@@ -85,7 +85,7 @@ Output:
     { name: 'einstein', isHungry: true, type: 'cat' },
 ]*/
 
-export function makeArrayWithIsHungry(arr) { // Work Here
+export function makeArrayWithIsHungry(arr) { 
     return arr.map(pet => ({
         ...pet,
         isHungry: true
@@ -102,8 +102,12 @@ Output:
     { name: 'EINSTEIN', type: 'cat' },
 ]*/
 
-export function makeShoutingArray(arr) {
-    return [];
+export function makeShoutingArray(arr) { // Test This Array
+    return arr.map(pet => {return {
+        name: pet.name.toUpperCase(),
+        type: pet.type
+    };
+    });
 }
 
 
