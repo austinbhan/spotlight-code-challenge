@@ -118,8 +118,8 @@ Output:
 ['spotdog', 'roverdog', 'jumpyfrog', einsteincat']
 */
 
-export function makeStringArray(arr) { // Test This Array
-    return arr.map(pet => pet.name + pet.type);
+export function makeStringArray(arr) { 
+    return arr.map(pet => `${pet.name}${pet.type}`);
 }
 
 /*
@@ -131,11 +131,22 @@ OUTPUT:
 { name: 'jumpy', type: 'frog' }
 */
 
-export function findByName(name, arr) {
-    return {};
+export function findByName(name, arr) { 
+    return arr.reduce((acc, cur) => 
+        cur.name === name ? cur : acc);
+        
+    // const array = arr.filter(
+    //     pet => (pet.name === name)
+    // );
+    // return array[0];
 }
 
-/*
+function name() {
+    return [1,2,3,4].reduce((acc, cur) =>  ({
+    ...acc, [cur]: true
+    }), {});}
+console.log(name());
+    /*
 Output:
 
 [
@@ -158,7 +169,7 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    return arr;
 }
 
 ////////////////////////////////////////////////////////
