@@ -18,7 +18,7 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
+    return arr.filter(pet => pet.type === 'dog');     
 }
 
 /*
@@ -28,7 +28,7 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map((pet) => pet.name);
 }
 
 /*
@@ -37,7 +37,7 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    return arr.filter((pet => pet.type === 'dog')).map(dog => dog.name);
 }
 
 /*
@@ -47,7 +47,7 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    return arr.map((pet) => pet.type).reverse();
 }
 
 /*
@@ -61,9 +61,19 @@ Output:
 ]
 */
 
-export function makeSpanishLanguageArray(arr) {
-    return [];
+export function makeSpanishLanguageArray(arr) { 
+    return arr.map((item) => {
+        return {
+            nombre: item.name,
+            tipo: item.type
+        };
+    });
 }
+
+// Change Name -> Nombre, and Type-> Tipo.
+// If it's same length, use map
+// Whenever we look at the array, we return what we want the array to look like
+// 
 
 /*
 Output:
@@ -75,8 +85,11 @@ Output:
     { name: 'einstein', isHungry: true, type: 'cat' },
 ]*/
 
-export function makeArrayWithIsHungry(arr) {
-     return []
+export function makeArrayWithIsHungry(arr) { 
+    return arr.map(pet => ({
+        ...pet,
+        isHungry: true
+    }));
 }
 
 /*
@@ -89,8 +102,13 @@ Output:
     { name: 'EINSTEIN', type: 'cat' },
 ]*/
 
-export function makeShoutingArray(arr) {
-    return [];
+export function makeShoutingArray(arr) { 
+    return arr.map(pet => { 
+        return {
+            name: pet.name.toUpperCase(),
+            type: pet.type
+        };
+    });
 }
 
 
@@ -100,8 +118,8 @@ Output:
 ['spotdog', 'roverdog', 'jumpyfrog', einsteincat']
 */
 
-export function makeStringArray(arr) {
-    return [];
+export function makeStringArray(arr) { 
+    return arr.map(pet => `${pet.name}${pet.type}`);
 }
 
 /*
@@ -113,11 +131,22 @@ OUTPUT:
 { name: 'jumpy', type: 'frog' }
 */
 
-export function findByName(name, arr) {
-    return {};
+export function findByName(name, arr) { 
+    return arr.reduce((acc, cur) => 
+        cur.name === name ? cur : acc);
+        
+    // const array = arr.filter(
+    //     pet => (pet.name === name)
+    // );
+    // return array[0];
 }
 
-/*
+function name() {
+    return [1,2,3,4].reduce((acc, cur) =>  ({
+    ...acc, [cur]: true
+    }), {});}
+console.log(name());
+    /*
 Output:
 
 [
@@ -140,9 +169,8 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    return arr.map(pet => ['name', `${pet.name}`])
 }
-
 ////////////////////////////////////////////////////////
 
 /*

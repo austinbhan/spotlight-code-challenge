@@ -53,7 +53,7 @@
     "comma-spacing": "error",
     "space-before-function-paren": ["error", "never"],
     "keyword-spacing": [
-      "error",
+      "never",
       {
         "before": true,
         "after": true,
