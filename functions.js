@@ -102,11 +102,12 @@ Output:
     { name: 'EINSTEIN', type: 'cat' },
 ]*/
 
-export function makeShoutingArray(arr) { // Test This Array
-    return arr.map(pet => {return {
-        name: pet.name.toUpperCase(),
-        type: pet.type
-    };
+export function makeShoutingArray(arr) { 
+    return arr.map(pet => { 
+        return {
+            name: pet.name.toUpperCase(),
+            type: pet.type
+        };
     });
 }
 
@@ -117,8 +118,8 @@ Output:
 ['spotdog', 'roverdog', 'jumpyfrog', einsteincat']
 */
 
-export function makeStringArray(arr) {
-    return [];
+export function makeStringArray(arr) { // Test This Array
+    return arr.map(pet => pet.name + pet.type);
 }
 
 /*
