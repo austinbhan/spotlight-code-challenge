@@ -61,7 +61,7 @@ Output:
 ]
 */
 
-export function makeSpanishLanguageArray(arr) { // Work Here
+export function makeSpanishLanguageArray(arr) { 
     return arr.map((item) => {
         return {
             nombre: item.name,
@@ -85,8 +85,11 @@ Output:
     { name: 'einstein', isHungry: true, type: 'cat' },
 ]*/
 
-export function makeArrayWithIsHungry(arr) {
-    return [];
+export function makeArrayWithIsHungry(arr) { // Work Here
+    return arr.map(pet => ({
+        ...pet,
+        isHungry: true
+    }));
 }
 
 /*
