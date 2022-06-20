@@ -169,9 +169,8 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return arr;
+    return arr.map(pet => ['name', `${pet.name}`])
 }
-
 ////////////////////////////////////////////////////////
 
 /*
